@@ -10,7 +10,7 @@ const prepareLink = (file) => {
   const url =
     process.env.NODE_ENV == 'development'
       ? process.env.DEV_URL
-      : 'https://gtfpl.baradusov.ru';
+      : 'https://devilfiles.herokuapp.com';
   return `${url}/api/file?id=${file.file_id}&name=${fileName}`;
 };
 
@@ -22,7 +22,7 @@ const bot = new Telegraf(BOT_TOKEN);
 
 bot.start(async (ctx) => {
   return ctx.reply(
-    "Send or forward me a fucking file and I'll give you the fucking public download link without fucking ads. This will only work with files of up to 20 MB in size."
+    "Send or forward me a file and I'll give you the public download link. This will only work with files of up to 20 MB in size."
   );
 });
 
